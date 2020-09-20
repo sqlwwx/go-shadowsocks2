@@ -17,6 +17,8 @@ win64:
 win32:
 	GOARCH=386 GOOS=windows $(GOBUILD) -o $(BINDIR)/$(NAME)-$@.exe
 
+arm:
+	GOOS=linux GOARCH=arm $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
 
 test: test-linux test-macos test-win64 test-win32
 
